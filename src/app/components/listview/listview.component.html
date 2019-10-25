@@ -1,0 +1,32 @@
+<div class="card text-black bg-white mb-3">
+    <div class="row card-header">
+        <div class="col-sm-10">Customer Info</div>
+        <div class="col-sm-2">
+            <app-search (keychanged)="filterdaya($event)"></app-search>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        <app-grid (sort_event)="sort($event)" [data]="data"></app-grid>
+        <div class="mr-2">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous" (click)="getPaginatedData(currentPageNumber-1)"
+                        [class.disabled]="currentPageNumber <= 1 ? true : false">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item" *ngFor="let i of Arr(totalPageNumber).fill(1); let idx = index"><a class="page-link"  (click)="getPaginatedData(idx+1)">{{ idx+1 }}</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next"  (click)="getPaginatedData(currentPageNumber+1)"
+                        [class.disabled]="(currentPageNumber == totalPageNumber || currentPageNumber == -1) ? true : false">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

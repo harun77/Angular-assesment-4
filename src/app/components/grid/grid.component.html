@@ -1,0 +1,18 @@
+<table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th class="sortable" (click)="sort('id')" scope="col"><i class="fa fa-sort" aria-hidden="true"></i>Customer Id</th>
+        <th class="sortable" (click)="sort('name')" scope="col"><i class="fa fa-sort" aria-hidden="true"></i>Customer Name</th>
+        <th class="sortable" (click)="sort('email')" scope="col"><i class="fa fa-sort" aria-hidden="true"></i>Customer Email</th>
+        <th class="sortable" (click)="sort('phone')" scope="col"><i class="fa fa-sort" aria-hidden="true"></i>Customer Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <th>{{ item.id }}</th>
+        <th>{{ item.name }}</th>
+        <th>{{ item.email }}</th>
+        <th>{{ item.phone }}</th>
+      </tr>
+    </tbody>
+  </table>
