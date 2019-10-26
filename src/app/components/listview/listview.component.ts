@@ -13,7 +13,7 @@ export class ListviewComponent implements OnInit {
   public store: any;
   public filteredData: any;
   public totalPageNumber: number;
-  public itemPerPage = 2;
+  public itemPerPage = 15;
   public Arr = Array;
   public currentPageNumber: number = 1;
 
