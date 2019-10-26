@@ -13,7 +13,7 @@ export class ListviewComponent implements OnInit {
   public store: any;
   public filteredData: any;
   public totalPageNumber: number;
-  public itemPerPage = 15;
+  public itemPerPage = 2;
   public Arr = Array;
   public currentPageNumber: number = 1;
 
@@ -46,7 +46,9 @@ export class ListviewComponent implements OnInit {
   }
 
   sort(prop: string) {
-    this.data = _.sortBy(this.store, prop);
+    this.data = _.sortBy(this.filteredData, prop);
+    this.filteredData = this.data.slice();
+    this.getPaginatedData(1);
   }
 
   compare(first: any, second: any) {
